@@ -1,0 +1,35 @@
+//  use of protected access modifier in class 
+#include <iostream>
+using namespace std ;
+
+class A{
+    private :
+    int val ;
+    protected :
+    int data = 4 ;
+    void here(){
+        cout << "Hello" << endl ;
+    }
+    public :
+    void print(){
+        cout << "Inside class A " << endl ;
+    }
+};
+class B : public A{
+    private : 
+    int val2 ;
+    
+    public :
+    void print2(){
+        cout << "Insisde class B " << data << endl ;
+        here() ; // it is possible 
+    }
+};
+int main(){
+    B first ;
+    first.print2() ;
+    first.print() ;
+    // first.here() ; 
+    //  it gives us error because of protected functions are not accesable outside 
+    return 0 ;
+}
