@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std ;
+
+class A{
+    private :
+    int data ;
+    public :
+    int val ;
+    void setdata(int a){
+        data = a ;
+        return ;
+    }
+    int getdata(){
+        return data ;
+    }
+};
+int main(){
+    A first ;
+    first.val = 5 ;
+    cout << "value : " << first.val << endl ;
+    first.setdata(10) ;
+    cout << "data : " << first.getdata() << endl ;
+    return 0 ;
+}
